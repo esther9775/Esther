@@ -1,0 +1,74 @@
+<html>
+<head>
+</head>
+<body background="image/100.JPG" width="290" height="290"><!--Place a picture in the background-->
+<img src="image/000.JPG" width="240" height="240"style="position:absolute; left:600px; top:200px;">
+<!--Insert a picture in a page,width, height of the elemen
+style"Position attribute to specify the location type of the element(top&left)"-->
+<img src="image/shakeimage.JPG"width="240" height="240" class="shakeimage" 
+	onMouseover="shake(this,'onmouseout')" style="position:absolute; left:145px; top:200px;"> 
+	<!--Insert a picture in a page,width, height of the elemen
+	Adding onmouseover, running JavaScript occurs when the mouse pointer moves over a shaking object
+style"Position attribute to specify the location type of the element(top&left)"-->
+
+<style>
+shakeimage{position:relative;left:100px;top:100px;}
+/*Define relative positioning of shaking*/
+ 	#sq {width: 240px;height: 240px;background: #f25068;position:relative;left:620px; top:200px;
+         filter:alpha(opacity=30);-moz-opacity:0.3;opacity:0.3;}
+       /*sq is figure 1, shaded on shaking and adjusted for transparency*/         
+    #sq1 {width: 240px;height: 240px;background:#50edf4;position:relative;left:580px; top:220px;
+         filter:alpha(opacity=30);-moz-opacity:0.3;opacity:0.3;}    
+         /*sq1 is figure 2, shaded on shaking and adjusted for transparency*/ 
+    </style>
+     <script>/*Insert a section of JavaScript into an HTML page*/
+    function ch() {
+        var sq = document.getElementById('sq') || document.getElementById('sq1');
+        /*Here to do compatibility, or you changed ID the first one can not get the object*/
+    	if(sq.id=="sq")
+    	{sq.id="sq1"}
+    	else{sq.id="sq"};
+    	}/*if the id of sq to sq, the id of sq is  to sq1,
+    	In other cases, the id of sq is equal to sq*/
+</script>
+<script language="JavaScript">   /*Insert a section of JavaScript into an HTML page*/ 
+	var typ=["marginTop","marginLeft"],rangeN=30,timeout=20; 
+	/*Set the range of edges(top&left),Set the shake range for shaking
+	function shake(o,end){/*Define the shakeing size of the shake*/ 
+	function shake(o,end){ 
+	var range=Math.floor(Math.random()*rangeN);    /*Perform a mathematical task on an object*/
+	var typN=Math.floor (Math.random()*typ.length);    /*Perform a mathematical task on an object*/
+	o["style"][typ[typN]]=""+range+"px"; 
+	/*Definition 0*/
+	var shakeTimer=setTimeout(function(){shake(o,end)},timeout); 
+	/*setTimeout:Call a function or evaluate an expression after a specified number of milliseconds
+	shake from 0 to end is set*/
+	o[end]=function(){clearTimeout(shakeTimer)}; 
+	/*Clears the defined Shaketimer time when o ends*/
+	} 	
+</script> 
+<script language="JavaScript">
+var backgroundOffset = 0;	 /*Offset of background picture*/
+var bgObject = eval('document.body');	 /*Get the object of the text block itself*/
+function scrollBG(maxSize) {	 /*This function is the core of the scrolling background*/
+backgroundOffset = backgroundOffset + 1;    /*Add background offset to 1 points*/
+if (backgroundOffset > maxSize) backgroundOffset = 0;	/*Returns 0 if the offset exceeds the maximum value*/
+bgObject.style.backgroundPosition = "0 " + backgroundOffset;	
+/*Set the offset of the background so that it takes effect*/
+}
+var ScrollTimer = window.setInterval("scrollBG(307)", 64);	
+/*Sets the interval between each move background.*/
+</script>
+ <div id="sq" onclick="ch();"></div><!--On sq, click the mouse to jump to function ch ()-->
+ <div style="position: absolute; top: 200; left:300;"><!--Define absolute Position,(top&left)-->
+  <table border="0" width="100%" cellspacing="0" cellpadding="0">
+  <!--Set borders around，
+  Spacing between table cell boundaries and cell contents-->
+    <tr>
+      <td width="100%"></td>
+    </tr>
+  </table>
+</div>
+<br />
+</body>
+</html>

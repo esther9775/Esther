@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html>
+<body>
+<canvas id="myCanvas" width="998" height="810" ></canvas>
+<!--Add canvas element to HTML5 page,Specify the ID, width, and height of the element-->
+<img src="image/glitch.gif" width="400" height="200"
+style="position:absolute; left:305px; top:100px; ">
+<!--Insert a picture in a page,width, height of the elemen
+style"Position attribute to specify the location type of the element(top&left)"-->
+
+
+<script type="text/javascript">/*Insert a section of JavaScript into an HTML page*/
+var c=document.getElementById("myCanvas");/*Custom getElementById () can return the specified <mycavans> ID */
+var cxt=c.getContext("2d");/*Create a Context object*/
+var grd=cxt.createLinearGradient(0,0,800,1000);/*Linear gradient*/
+grd.addColorStop(0,"#f25068");/*Specify the color and position in a linear gradient*/
+grd.addColorStop(1,"#50edf4");/*Specify the color and position in a linear gradient*/
+cxt.fillStyle=grd;/*grd  Gradient*/
+cxt.fillRect(0,0,998,810);/*Fill Gradient trapezoid*/
+</script>
+<script>/*Insert a section of JavaScript into an HTML page*/
+var ele = document.getElementById("myCanvas");/*Custom getElementById () can return the specified <mycavans> ID */
+var ctx=ele.getContext("2d");/*Create a Context object*/
+ctx.font="20px Verdana";/*Set font properties*/
+ctx.fillStyle="#000000";/*Fill Font Color*/
+ctx.yextAlign='center';/*Arrange the text in the center.*/
+ctx.fillText("-FLLOW ME-",430,555);/*Define text and X,y of text*/
+</script>
+<script language="javascript" type="text/javascript">/*Insert a section of JavaScript into an HTML page*/
+window.location.herf='-FLLOW ME-';/*Returns the URL of the current page*/
+setTimeout("javascript:location.href='LAST%20WEB1.html'",5000);
+/*Execute code only once,Code five seconds to jump directly to the appropriate page*/
+</script>
+</script>
+</body>
+</html>
